@@ -1,0 +1,7 @@
+services:
+  App\Buzmarev\QueueManagerBundle\Command\RunWorkerCommand:
+    arguments:
+      - '@logger'
+      - '@doctrine'
+    tags:
+      - { name: console.command }

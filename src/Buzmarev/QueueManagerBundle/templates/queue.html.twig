@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <h1>Очереди</h1>
+        <a href="{{ path('index_page') }}">Queue Manager</a>
+        <br>
+        <br>
+        <div>
+            <form method="POST">
+                {% for status in statuses %}
+                    <div>
+                        <input type="radio" name="filter" value="{{ status.id }}">
+                        <label>{{ status.name }}</label>
+                    </div>
+                {% endfor %}
+                <button type='submit'>Обновить</button> 
+            </form>
+            
+            <table border="1">
+                <caption>Очередь</caption>
+                <tr>
+                    <th>Название Таски</th>
+                    <th>Статус</th>
+                    <th>Дата создания</th>
+                    <th>Дата запуска</th>
+                    <th>Дата завершения</th>
+                </tr>
+                {% for queue in queues %}
+                    <tr>
+                        <td>{{ queue.taskName }}</td>
+                        <td>{{ queue.statusId.name }}</td>
+                        <td>{{ queue.createdAt|date('Y-m-d H:i:s') }}</td>
+                        <td>{{ queue.startAt|date('Y-m-d H:i:s') }}</td>
+                        <td>{{ queue.endAt|date('Y-m-d H:i:s') }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>

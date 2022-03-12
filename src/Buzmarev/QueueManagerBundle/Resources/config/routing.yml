@@ -1,0 +1,27 @@
+index_page:
+    path: /
+    controller: App\Buzmarev\QueueManagerBundle\Controller\QueueManagerController::index
+    
+queue_page:
+    path: /queue
+    controller: App\Buzmarev\QueueManagerBundle\Controller\QueueController::index
+
+task_1_page:
+    path: /task1
+    controller: App\Buzmarev\QueueManagerBundle\Controller\Task1Controller::index
+    methods: GET
+    
+task_1_launch:
+    path: /task1
+    controller: App\Buzmarev\QueueManagerBundle\Controller\Task1Controller::launch
+    methods: POST
+
+task_2_page:
+    path: /task2
+    controller: App\Buzmarev\QueueManagerBundle\Controller\Task2Controller::index
+    methods: GET
+    
+task_2_launch:
+    path: /task2
+    controller: App\Buzmarev\QueueManagerBundle\Controller\Task2Controller::launch
+    methods: POST

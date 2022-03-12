@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome!</title>
+    </head>
+    <body>
+        <h1>{{ task_name }}</h1>
+        <a href="{{ path('index_page') }}">Queue Manager</a>
+        <div>
+            <p><b>Поставить в очередь</b></p>
+            <form action="{{ path('task_2_launch') }}" method="POST">
+                <p>Количество задач</p>
+                <input name="qnt" type="number" min="1" max="100" value="1">
+                <br>
+                <br>
+                <button type='submit'>Отправить {{ task_name }} в работу</button>
+            </form>
+        </div>
+    </body>
+</html>
